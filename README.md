@@ -4,7 +4,7 @@
 
 本节将以时间轴为主线，简要回顾深度学习（Deep Learning, DL）与强化学习（Reinforcement Learning, RL）的发展历程与现状，特别是结合深度学习算法体系后，所诞生的深度强化学习（Deep Reinforcement Learning, DRL）取得了众多突破性成果。作为推动人工智能发展的重点学科之一，由图1.5所示奖项可知，2019年3月，由国际计算机学会宣布，“深度学习之父”Yoshua Bengio、Yann LeCun与Geoffrey Hinton获得2018年度图灵奖[21]；2024年10月，瑞典皇家科学院宣布将2024年诺贝尔物理学奖颁给John J. Hopfield与Geoffrey E. Hinton，以表彰他们在基于人工神经网络的机器学习领域所做的基础性发现与开创性贡献[22]；2025年3月，国际计算机学会宣布2024年图灵奖颁给Andrew G. Barto与Richard S. Sutton，以表彰他们在构建强化学习概念与算法体系方面做出的开创性贡献[23]。综上可知，虽然混合动力汽车与节能控制策略是本次博士学位论文的研究对象与任务背景，但深度强化学习也是核心的算法基础与贡献方向。作者非常庆幸在入学时选择了正确方向并赶上了发展时代，有志于以微薄之力推动强化学习在车辆领域的应用。接下来，将通过重点梳理具有里程碑意义的代表性工作以及相关成果的知名学者，以宏观的历史视角呈现主体的发展脉络。
 
-![Uploading 1.png…]()  <img width="582" height="804" alt="2" src="https://github.com/user-attachments/assets/e4217a9b-d924-428e-8fd6-c0d04eb80db8" />  <img width="584" height="788" alt="3" src="https://github.com/user-attachments/assets/1276708c-2719-451e-9aed-d651de96a5b4" />
+<img width="680" height="321" alt="绘图1" src="https://github.com/user-attachments/assets/6e958e88-54bc-4efc-b125-30673bf44b07" />
 
 **深度学习发展历程与现状**
 
@@ -14,9 +14,13 @@
 
 近年来，众多以深度学习为基础的代表性成果相继涌现，特别是由美国OpenAI人工智能研究公司于2018年开发基于Transformer架构的生成式预训练语言模型（Generative Pre-trained Transformer, GPT）[33]与2022年发布经对话数据集微调的ChatGPT，由此掀起了关于大语言模型（Large Language Model, LLM）的研究热潮，带动了各领域对人工智能技术的推广应用。然而，根据时间轴可知，在2012年由Alex Krizhevsky、Ilya Sutskever以及Geoffrey E. Hinton提出AlexNet网络[34]并且开启“深度学习时代”之前，经历了约10年的沉积期。同时，除了人工神经网络、反向传播算法与梯度下降法之外，作为深度学习“三要素”的数据与算力也开始取得实质性发展。其中，以美国斯坦福Stanford大学Feifei Li教授提出的ImageNet数据集[35]以及Jensen Huang等人创办的美国NVIDIA公司所推出的图形处理单元（Graphics processing unit, GPU）为代表。
 
+
+
 对于数据而言，ImageNet项目作为用于视觉对象识别的大型可视化数据库，包含超过20000个类别和1400万张标注图像，ImageNet大规模视觉识别挑战赛也成为计算机视觉（Computer Vision, CV）领域的知名竞赛之一。在竞赛机制推动下，众多里程碑式深度神经网络结构不断涌现，包括了AlexNet[34]、ZFNet[36]、VGG[37]、GoogLeNet[38]与ResNet[39]等历年冠亚军级经典模型。在2012年，作为冠军的AlexNet网络由Alex Krizhevsky、Ilya Sutskever与Geoffrey E. Hinton共同提出。其核心贡献是引入了由卷积层和全连接层组成的神经网络结构；采用了ReLU作为激活函数；提出了随机失活Dropout缓解过拟合；使用了基于动量的小批量梯度下降加速收敛；采用了数据增强降低过拟合风险；利用了NVIDIA GeForce GTX 580实现并行计算后大幅加速网络模型的训练。因此，2012年被认为是深度学习爆发的时间点。2013年，冠军网络ZFNet在AlexNet的基础上对卷积核尺寸、数量与步长进行了调整。2014年，冠军网络GoogLeNet和亚军网络VGG均对卷积结构做出创新。前者GoogLeNet提出Inception架构，通过在同一层并行引入不同尺度的卷积核，有效增强多尺度建模能力。同时，GoogLeNet去除了AlexNet中参数量占比极高的前两层全连接，采用平均池化使得参数量降至AlexNet的十二分之一。在训练方面，GoogLeNet在中间层引入辅助分类器，通过额外的监督信号缓解了深层网络的梯度消失问题，提高了模型训练的稳定性与收敛效率。后者VGG网络由牛津大学的视觉几何组提出，在摒弃AlexNet中11×11与5×5的大型卷积核后，转而采用多个3×3尺寸的小卷积核扩大感受野。此外，VGG去除了AlexNet网络的局部响应归一化运算操作。通常而言，更深层的神经网络能提取更高级的特征。但随着网络规模与参数总量的增加，一方面，在反向传播中容易引发梯度消失或梯度爆炸问题，导致模型收敛速度变慢甚至崩塌；另一方面，数据拟合能力将更容易捕获噪声特征，进而增加过拟合风险，削弱了模型对未知数据分布的泛化性。2015年，冠军网络ResNet由微软亚洲研究院的Kaiming He提出，该网络创新性地引入残差连接方式后，解决了深层神经网络所面临的反向梯度传播困难等挑战。其核心思想是采用“跳跃连接”方式使得输入能与输出叠加，从而在反向传播时保留原始信息并促进梯度流动。此外，ResNet在结构中系统性引入了批量归一化Batch Normalization以缓解梯度消失与梯度爆炸问题。现如今，基于ResNet网络的残差结构已成为大型深度神经网络的必需架构之一。
 
 **强化学习发展历程与现状**
+
+<img width="709" height="217" alt="image" src="https://github.com/user-attachments/assets/9ddd1b61-346e-408c-a433-6c38e29deae4" />
 
 作为同样隶属于机器学习体系的训练逻辑，如图1.7所示的强化学习标准架构包含着两个核心模块（智能体、环境）以及三种变量类型（状态、动作、奖励）[49]。其基本范式流程可以描述为：智能体在当前策略的引导下，根据环境的状态选择相应动作；当环境执行该动作后，在转移到下一个状态的同时生成相应的奖励值；智能体将依据所产生的经验样本计算损失与梯度后更新当前策略。基于上述流程不断地试错探索当前状态空间对应的最优策略，当总累计奖励稳定收敛于最大值，意味着智能体掌握了在当前环境的最优策略[50]。经过多年的发展归纳，强化学习的算法体系可根据样本特征划分为以下三类：基于动态规划（Dynamic Programming, DP）、基于蒙特卡洛（Monte Carlo, MC）与基于时序差分（Temporal Difference, TD）。同时，还可以依据离线学习Offline Learning/在线学习Online Learning、基于模型Model-based/免模型Model-free以及固定性策略On-Policy/非固定性策略Off-Policy这三类指标进一步细分。
 
