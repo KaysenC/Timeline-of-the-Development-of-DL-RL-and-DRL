@@ -5,6 +5,8 @@
 
 图1 深度学习、强化学习与深度强化学习的发展时间轴
 
+<img width="5672" height="2170" alt="图1 4 深度学习强化学习深度强化学习的发展时间轴" src="https://github.com/user-attachments/assets/8f702d78-5283-4a86-b796-9a4a3dfd1597" />
+
 Figure 1. Timeline of the Development of Deep Learning, Reinforcement Learning, and Deep Reinforcement Learning
 
 本节将以时间轴为主线，简要回顾深度学习（Deep Learning, DL）与强化学习（Reinforcement Learning, RL）的发展历程与现状，特别是结合深度学习算法体系后，所诞生的深度强化学习（Deep Reinforcement Learning, DRL）取得了众多突破性成果。作为推动人工智能发展的重点学科之一，由图1.5所示奖项可知，2019年3月，由国际计算机学会宣布，“深度学习之父”Yoshua Bengio、Yann LeCun与Geoffrey Hinton获得2018年度图灵奖；2024年10月，瑞典皇家科学院宣布将2024年诺贝尔物理学奖颁给John J. Hopfield与Geoffrey E. Hinton，以表彰他们在基于人工神经网络的机器学习领域所做的基础性发现与开创性贡献；2025年3月，国际计算机学会宣布2024年图灵奖颁给Andrew G. Barto与Richard S. Sutton，以表彰他们在构建强化学习概念与算法体系方面做出的开创性贡献。综上可知，虽然混合动力汽车与节能控制策略是本次博士学位论文的研究对象与任务背景，但深度强化学习也是核心的算法基础与贡献方向。作者非常庆幸在入学时选择了正确方向并赶上了发展时代，有志于以微薄之力推动强化学习在车辆领域的应用。接下来，将通过重点梳理具有里程碑意义的代表性工作以及相关成果的知名学者，以宏观的历史视角呈现主体的发展脉络。
